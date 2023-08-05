@@ -19,6 +19,7 @@ export default function RootLayout({
     <html lang="fa" dir="rtl">
       <body className={`${inter.className} overflow-y-auto overflow-x-hidden`}>
         <CtFlyingHeader />
+        {children}
       </body>
     </html>
   );

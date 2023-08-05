@@ -169,8 +169,8 @@ const CtFlyingHeader = function () {
                   onMouseLeave={() => mouseLeaveItem(child[0])}
                   onMouseEnter={() => mouseEnter({ child, index })}
                   onClick={() => onClickItems({ child, index })}
-                  className={`item-items group flex h-11 items-center
-                  ${state > 1 && index === currentIndex && "pop-child"}`}
+                  className={`item-items group flex h-11 items-center 
+                  ${state > 1 && index === currentIndex ? "pop-child" : ""}`}
                   key={name}
                   style={
                     {
