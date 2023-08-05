@@ -228,15 +228,20 @@ function ChildList({ items, name, index }: any) {
       </h2>
       <ul className="flex flex-col gap-3">
         {items.map((item: any, index: number) => (
-          <li
-            className="child-items"
-            style={{ "--item-number": index + 2 } as React.CSSProperties}
-            key={item}
-          >
-            {item}
-          </li>
+          <ChildItem item={item} index={index} key={item} />
         ))}
       </ul>
     </div>
+  );
+}
+
+function ChildItem({ item, index }: any) {
+  return (
+    <li
+      className="child-items"
+      style={{ "--item-number": index + 2 } as React.CSSProperties}
+    >
+      {item}
+    </li>
   );
 }
