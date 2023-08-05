@@ -218,7 +218,7 @@ function ChildList({ items, name, index }: any) {
   return (
     <div
       style={{ "--group-number": index + 1 } as React.CSSProperties}
-      className="item-groups mt-8 flex w-full flex-col gap-5 pb-10  text-lg first:w-full first:text-2xl sm:w-auto lg:mt-24 lg:w-auto lg:first:w-auto"
+      className="item-groups mt-8 flex w-full flex-col gap-5 pb-10 text-lg first:w-full first:text-2xl sm:w-auto lg:mt-24 lg:w-auto lg:first:w-auto"
     >
       <h2
         style={{ "--item-number": 1 } as React.CSSProperties}
