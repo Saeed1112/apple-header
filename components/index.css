@@ -44,7 +44,7 @@
 }
 
 .items-group {
-  @apply flex flex-col gap-3 last:pb-10 md:last:pb-0;
+  @apply flex flex-col gap-3 last:pb-20 md:last:pb-0;
   @apply text-sm first:text-xl;
 }
 
