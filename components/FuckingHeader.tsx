@@ -97,7 +97,7 @@ const TheHeader = function () {
     <header
       style={{ "--prev-height": `${prevHeight}rem` } as React.CSSProperties}
       dir="ltr"
-      className={`${states[state]} global-header fixed left-0 right-0 top-0 z-50 flex overflow-hidden bg-neutral-950/80 font-kalameh font-medium backdrop-blur md:h-11 md:overflow-visible`}
+      className={`${states[state]} global-header fixed left-0 right-0 top-0 z-50 flex h-11 overflow-hidden bg-neutral-950/80 font-kalameh font-medium backdrop-blur md:overflow-visible`}
       onMouseLeave={onMouseLeave}
     >
       <ul

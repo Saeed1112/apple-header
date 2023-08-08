@@ -9,9 +9,14 @@
   --item-number: 1;
 }
 
-.open-menu.global-header,
-.open-sub-menu.global-header {
-  @apply h-screen overflow-y-auto overflow-x-hidden md:h-11 md:overflow-visible;
+.global-header {
+  transition-property: height;
+  transition-duration: 0.32s;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.6, 1);
+}
+
+.global-header:where(.open-sub-menu, .open-menu) {
+  @apply h-screen overflow-y-auto overflow-x-hidden md:h-11 md:overflow-visible !important;
 }
 
 .menu {
