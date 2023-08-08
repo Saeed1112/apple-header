@@ -68,7 +68,8 @@
 }
 
 .child-list {
-  @apply invisible absolute bottom-0 left-0 right-0 top-11 h-screen overflow-auto px-10 opacity-0 lg:top-0 lg:h-auto lg:overflow-hidden;
+  @apply overflow-auto;
+  @apply invisible absolute bottom-0 left-0 right-0 top-11 h-screen opacity-0 lg:top-0 lg:h-auto lg:overflow-hidden;
   @apply -translate-x-2 lg:h-0;
 }
 

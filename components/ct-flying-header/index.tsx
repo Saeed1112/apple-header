@@ -87,6 +87,7 @@ const CtFlyingHeader = function () {
   function onResize() {
     const width = window.innerWidth;
     setIsMobile(width < 1024);
+    document.body.style.position = "initial";
   }
 
   useEffect(() => {
@@ -100,6 +101,14 @@ const CtFlyingHeader = function () {
     window.addEventListener("resize", onResize);
     return () => window.removeEventListener("resize", onResize);
   }, []);
+  useEffect(() => {
+    if (!isMobile) return;
+    if (state > 0)
+      setTimeout(() => {
+        document.body.style.position = "fixed";
+      }, 230);
+    else document.body.style.position = "initial";
+  }, [state]);
 
   function mouseEnter({ index, child }: { index: number; child: any[] }) {
     if (isMobile) return;
@@ -154,16 +163,16 @@ const CtFlyingHeader = function () {
       ${state > 1 ? "step-2" : ""}
      header fixed left-0 right-0 top-0 z-50 h-11 bg-white/80 font-kalameh text-gray-900 backdrop-blur-md dark:bg-neutral-950/80 dark:text-white lg:flex lg:overflow-visible`}
     >
-      <div className="header-container flex flex-1 lg:h-[--nav-height]">
-        <ul className="container flex h-11 w-full items-center gap-3 self-start px-10 text-xl font-semibold lg:text-xs lg:font-medium">
+      <div className="header-container flex min-h-[3rem] flex-1 overflow-hidden lg:h-[--nav-height]">
+        <ul className="container mx-auto flex h-full w-full flex-wrap items-center gap-3 self-start px-10 text-xl font-semibold lg:text-xs lg:font-medium">
           <li
-            className="back-btn flex aspect-square h-11 items-center justify-center lg:hidden"
+            className="back-btn flex aspect-square h-11 items-center justify-center self-start lg:hidden"
             onClick={backInMobileMode}
           >
-            B
+            Back
           </li>
-          <li className="absolute bottom-0 left-0 right-0 top-0 lg:static">
-            <ul className="navbar mt-16 flex flex-col gap-3 px-10 text-xl font-semibold lg:container lg:mt-0 lg:w-full lg:flex-row lg:justify-between lg:px-0 lg:text-xs lg:font-medium">
+          <li className="absolute left-0 right-0 flex self-start">
+            <ul className="navbar container mx-auto mt-16 flex h-full flex-1 flex-col gap-3 overflow-auto px-10 text-xl font-semibold lg:mt-0 lg:w-full lg:flex-row lg:justify-between lg:px-0 lg:text-xs lg:font-medium">
               {list.map(({ child, name }, index) => (
                 <li
                   onMouseLeave={() => mouseLeaveItem(child[0])}
@@ -188,23 +197,28 @@ const CtFlyingHeader = function () {
                       -
                     </span>
                   </div>
-                  <div className="child-list container ">
-                    <div className="relative flex w-full flex-wrap gap-10 gap-y-0 pb-10 pt-0 lg:flex-row">
-                      {child.map(({ items, name }, index) => (
-                        <ChildList
-                          key={name}
-                          index={index}
-                          items={items}
-                          name={name}
-                        />
-                      ))}
+                  <div className="child-list flex">
+                    <div className="container mx-auto px-10">
+                      <div className="relative flex w-full flex-wrap gap-10 gap-y-0 pb-10 pt-0 lg:flex-row">
+                        {child.map(({ items, name }, index) => (
+                          <ChildList
+                            key={name}
+                            index={index}
+                            items={items}
+                            name={name}
+                          />
+                        ))}
+                      </div>
                     </div>
                   </div>
                 </li>
               ))}
             </ul>
           </li>
-          <li className="z-50 mr-auto lg:hidden" onClick={openInMobileMode}>
+          <li
+            className="z-50 mr-auto flex h-11 items-center justify-center self-start lg:hidden"
+            onClick={openInMobileMode}
+          >
             Open
           </li>
         </ul>

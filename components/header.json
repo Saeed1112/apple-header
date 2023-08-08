@@ -1,0 +1,131 @@
+[
+  {
+    "name": "فروشگاه",
+    "child": [
+      {
+        "name": "فروشگاه",
+        "items": [
+          "جدیدترین محصولات",
+          "موبایل",
+          "لپتاپ",
+          "قطعات کامپیوتر",
+          "Apple Watch",
+          "Accessories"
+        ]
+      },
+      {
+        "name": "لینک ها",
+        "items": [
+          "نزدیک ترین شعب",
+          "خرید حظوری",
+          "پشتیبانی فروش",
+          "پرسش های قبل از خرید",
+          "College Student Offer"
+        ]
+      },
+      {
+        "name": "Shop Special Stores",
+        "items": [
+          "Certified Refurbished",
+          "Education",
+          "Business",
+          "Veteran and Military",
+          "Government"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "خدمات",
+    "child": [
+      {
+        "name": "لینک ها",
+        "items": [
+          "نزدیک ترین شعب",
+          "خرید حظوری",
+          "پشتیبانی فروش",
+          "پرسش های قبل از خرید",
+          "College Student Offer"
+        ]
+      },
+      {
+        "name": "Shop Special Stores",
+        "items": [
+          "Certified Refurbished",
+          "Education",
+          "Business",
+          "Veteran and Military",
+          "Government"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "محصولات",
+    "child":  [
+      {
+        "name": "Shop Special Stores",
+        "items": [
+          "Certified Refurbished",
+          "Education",
+          "Business",
+          "Veteran and Military",
+          "Government"
+        ]
+      },
+      {
+        "name": "فروشگاه",
+        "items": [
+          "جدیدترین محصولات",
+          "موبایل",
+          "لپتاپ",
+          "قطعات کامپیوتر",
+          "Apple Watch",
+          "Accessories"
+        ]
+      },
+      {
+        "name": "لینک ها",
+        "items": [
+          "نزدیک ترین شعب",
+          "خرید حظوری",
+          "پشتیبانی فروش",
+          "پرسش های قبل از خرید",
+          "College Student Offer"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "iPad",
+    "child": []
+  },
+  {
+    "name": "Watch",
+    "child": []
+  },
+  {
+    "name": "Vision",
+    "child": []
+  },
+  {
+    "name": "AirPods",
+    "child": []
+  },
+  {
+    "name": "Tv & Home",
+    "child": []
+  },
+  {
+    "name": "Entertainment",
+    "child": []
+  },
+  {
+    "name": "Accessories",
+    "child": []
+  },
+  {
+    "name": "Support",
+    "child": []
+  }
+]

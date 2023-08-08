@@ -1,7 +1,7 @@
 import "./globals.css";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
-import CtFlyingHeader from "@/components/ct-flying-header";
+import FuckingHeader from "@/components/FuckingHeader";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -18,7 +18,7 @@ export default function RootLayout({
   return (
     <html lang="fa" dir="rtl">
       <body className={`${inter.className} overflow-y-auto overflow-x-hidden`}>
-        <CtFlyingHeader />
+        <FuckingHeader />
         {children}
       </body>
     </html>
