@@ -143,10 +143,11 @@ function TheFuckingMenu({ name, child, index }: TheFuckingMenuProps) {
       setState(States.ShowSubMenu);
       setCurrentIndex(index);
     } else setState(States.Close);
+    setPrevHeight(height);
   }
 
   function onMouseLeave() {
-    setPrevHeight(height);
+    // setPrevHeight(height);
   }
 
   function onClick() {
@@ -159,6 +160,7 @@ function TheFuckingMenu({ name, child, index }: TheFuckingMenuProps) {
 
   return (
     <div
+      onMouseLeave={onMouseLeave}
       className="container mx-auto md:mx-0 md:w-auto"
       style={
         {
@@ -169,9 +171,7 @@ function TheFuckingMenu({ name, child, index }: TheFuckingMenuProps) {
     >
       <div className="menu-item">
         <ul onClick={onClick} className="cursor-pointer">
-          <li onMouseLeave={onMouseLeave} onMouseEnter={onMouseEnter}>
-            {name}
-          </li>
+          <li onMouseEnter={onMouseEnter}>{name}</li>
           <li className="hidden"></li>
         </ul>
       </div>

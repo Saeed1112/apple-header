@@ -53,20 +53,19 @@
     transition-delay: 0.32s;
   }
 
-  .open-sub-menu .submenu {
-    @apply h-[--prev-height];
+  .submenu {
+    @apply min-h-[2.75rem];
   }
 
   .open-sub-menu .submenu {
-    transition-timing-function: cubic-bezier(0.4, 0, 0.6, 1),
-      cubic-bezier(0.4, 0, 0.6, 1);
-
-    transition: height 0s 0.32s, opacity 0.32s 0.32s;
+    @apply h-[--prev-height];
+    transition: opacity 0.24s 0.24s, height 0.24s;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.6, 1);
     @apply opacity-0;
   }
 
   .open-sub-menu .submenu.open {
-    transition: opacity 0.32s, height 0.32s;
+    transition: opacity 0.24s, height 0.24s;
     transition-timing-function: cubic-bezier(0.4, 0, 0.6, 1),
       cubic-bezier(0.4, 0, 0.6, 1);
     @apply h-[--menu-height] opacity-100;
