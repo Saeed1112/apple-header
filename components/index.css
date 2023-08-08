@@ -53,10 +53,6 @@
     transition-delay: 0.32s;
   }
 
-  .submenu {
-    @apply min-h-[2.75rem];
-  }
-
   .open-sub-menu .submenu {
     @apply h-[--prev-height];
     transition: opacity 0.24s 0.24s, height 0.24s;

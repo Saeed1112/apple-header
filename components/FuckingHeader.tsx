@@ -50,6 +50,10 @@ const FuckingHeader = () => {
     else document.body.style.position = "initial";
   }, [isMobile, state]);
 
+  useEffect(() => {
+    setCurrentIndex(-1);
+  }, [isMobile]);
+
   function onResize() {
     const width = window.innerWidth;
     if (width < 768) setIsMobile(true);
@@ -177,7 +181,7 @@ function TheFuckingMenu({ name, child, index }: TheFuckingMenuProps) {
       </div>
       <div
         dir="ltr"
-        className={`${currentIndex === index ? "open" : ""} submenu`}
+        className={`${currentIndex === index ? "open" : ""} submenu `}
       >
         <div className="group-container" dir="rtl">
           {child.map((item: any, index) => (
