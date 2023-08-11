@@ -52,6 +52,7 @@ const FuckingHeader = () => {
 
   useEffect(() => {
     setCurrentIndex(-1);
+    setState(States.Close);
   }, [isMobile]);
 
   function onResize() {
@@ -75,7 +76,11 @@ const FuckingHeader = () => {
       }}
     >
       <TheHeader />
-      <div className="absolute left-0 right-0 h-screen "></div>
+      <div
+        className={`${
+          state > 0 ? "opened" : ""
+        } header-background-cover absolute left-0 right-0 h-screen backdrop-blur`}
+      ></div>
     </HeaderContext.Provider>
   );
 };
@@ -101,11 +106,12 @@ const TheHeader = function () {
       className={`${states[state]} global-header fixed left-0 right-0 top-0 z-50 flex h-11 overflow-hidden bg-neutral-950/80 font-kalameh font-normal backdrop-blur md:overflow-visible`}
       onMouseLeave={onMouseLeave}
     >
+      <div className="header-cover absolute inset-0 z-[54] h-11 bg-neutral-950"></div>
       <ul
         dir="rtl"
         className="container mx-auto flex w-full justify-between gap-2 px-5 text-xs sm:px-0 md:max-h-[2.8rem] md:items-center"
       >
-        <li className="relative z-40 flex h-11 items-center">Any</li>
+        <li className="nav-items">Any</li>
         <li className="menu">
           {data.map((item, index) => (
             <TheFuckingMenu
@@ -116,12 +122,10 @@ const TheHeader = function () {
             />
           ))}
         </li>
-        <li className="relative z-40 mr-auto flex h-11 items-center md:mr-0">
-          Fucking
-        </li>
-        <li className="relative z-40 flex h-11 items-center">Thing</li>
+        <li className="nav-items mr-auto md:mr-0">Cool</li>
+        <li className="nav-items">Thing</li>
         <li
-          className="relative z-40 flex h-11 items-center justify-center md:hidden"
+          className="relative z-[55] flex h-11 items-center justify-center md:hidden"
           onClick={toggleButtonClick}
         >
           {state > 0 ? "Close" : "Open"}
@@ -203,7 +207,12 @@ function TheFuckingItemGroup({ items, name, index }: any) {
   return (
     <div
       className="items-group"
-      style={{ "--group-number": index + 1 } as React.CSSProperties}
+      style={
+        {
+          "--group-number": index + 1,
+          "--total-items": items.length + 1,
+        } as React.CSSProperties
+      }
     >
       <h2
         style={{ "--item-number": 1 } as React.CSSProperties}
@@ -226,7 +235,7 @@ function TheFuckingItem({ item, index }: any) {
       className="single-item"
       style={{ "--item-number": index + 2 } as React.CSSProperties}
     >
-      {item}
+      <a href="#">{item}</a>
     </li>
   );
 }

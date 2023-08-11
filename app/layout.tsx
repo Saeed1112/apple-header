@@ -17,7 +17,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="fa" dir="rtl">
+    <html lang="fa" dir="rtl" className="dark">
       <body
         className={`${kalameh.className} overflow-y-auto overflow-x-hidden bg-cover bg-center bg-no-repeat`}
         style={{
