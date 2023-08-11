@@ -216,7 +216,7 @@ function TheFuckingItemGroup({ items, name, index }: any) {
     >
       <h2
         style={{ "--item-number": 1 } as React.CSSProperties}
-        className="single-item cursor-default text-xs font-normal text-neutral-200"
+        className="single-item mb-1 cursor-default text-xs font-normal text-neutral-200"
       >
         {name}
       </h2>
