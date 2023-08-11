@@ -2,6 +2,7 @@ import "./globals.css";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import FuckingHeader from "@/components/FuckingHeader";
+import kalameh from "@/font/kalameh";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -18,7 +19,7 @@ export default function RootLayout({
   return (
     <html lang="fa" dir="rtl">
       <body
-        className={`${inter.className} overflow-y-auto overflow-x-hidden bg-cover bg-center bg-no-repeat`}
+        className={`${kalameh.className} overflow-y-auto overflow-x-hidden bg-cover bg-center bg-no-repeat`}
         style={{
           backgroundImage: 'url("/background.webp")',
         }}
