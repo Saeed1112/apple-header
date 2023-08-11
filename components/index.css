@@ -133,10 +133,11 @@
     transition-duration: 0.25s;
     transition-timing-function: cubic-bezier(0.4, 0, 0.6, 1),
       cubic-bezier(0.4, 0, 0.6, 1);
-    transition-delay: 0.25s;
+    transition-delay: 0.24s;
   }
 
   .open-sub-menu .submenu {
+    transition-delay: 0.24s;
     @apply h-[--prev-height];
     transition: opacity 0.25s 0.25s, height 0.25s;
     transition-timing-function: cubic-bezier(0.4, 0, 0.6, 1);
@@ -175,5 +176,6 @@
 
   .open-sub-menu .single-item {
     @apply translate-y-0 opacity-100 transition-all duration-700;
+    transition-delay: calc(var(--group-delay) + var(--item-number) * 20ms);
   }
 }
