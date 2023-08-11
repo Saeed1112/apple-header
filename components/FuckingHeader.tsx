@@ -46,8 +46,8 @@ const FuckingHeader = () => {
   }, []);
 
   useEffect(() => {
-    if (isMobile && state > 0) document.body.style.position = "fixed";
-    else document.body.style.position = "initial";
+    // if (isMobile && state > 0) document.body.style.position = "fixed";
+    // else document.body.style.position = "initial";
   }, [isMobile, state]);
 
   useEffect(() => {
@@ -75,6 +75,7 @@ const FuckingHeader = () => {
       }}
     >
       <TheHeader />
+      <div className="absolute left-0 right-0 h-screen "></div>
     </HeaderContext.Provider>
   );
 };
@@ -97,7 +98,7 @@ const TheHeader = function () {
     <header
       style={{ "--prev-height": `${prevHeight}rem` } as React.CSSProperties}
       dir="ltr"
-      className={`${states[state]} global-header fixed left-0 right-0 top-0 z-50 flex h-11 overflow-hidden bg-neutral-950/80 font-kalameh font-medium backdrop-blur md:overflow-visible`}
+      className={`${states[state]} global-header fixed left-0 right-0 top-0 z-50 flex h-11 overflow-hidden bg-neutral-950/80 font-kalameh font-normal backdrop-blur md:overflow-visible`}
       onMouseLeave={onMouseLeave}
     >
       <ul
@@ -206,7 +207,7 @@ function TheFuckingItemGroup({ items, name, index }: any) {
     >
       <h2
         style={{ "--item-number": 1 } as React.CSSProperties}
-        className="single-item cursor-default text-sm font-light text-neutral-200"
+        className="single-item cursor-default text-xs font-normal text-neutral-200"
       >
         {name}
       </h2>

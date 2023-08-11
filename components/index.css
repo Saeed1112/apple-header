@@ -7,16 +7,19 @@
   --elevated-group-count: 1;
   --total-items: 1;
   --item-number: 1;
+  --menu-number: 1;
 }
 
 .global-header {
-  transition-property: height;
+  transition-property: height, background-color;
+  transition-delay: 0.12s;
   transition-duration: 0.32s;
   transition-timing-function: cubic-bezier(0.4, 0, 0.6, 1);
 }
 
 .global-header:where(.open-sub-menu, .open-menu) {
-  @apply h-screen overflow-y-auto overflow-x-hidden md:h-11 md:overflow-visible !important;
+  transition-delay: 0s;
+  @apply h-screen overflow-y-auto overflow-x-hidden bg-neutral-950 md:h-11 md:overflow-visible !important;
 }
 
 .menu {
@@ -24,7 +27,22 @@
 }
 
 .menu-item {
-  @apply relative z-40 flex h-10 items-center text-2xl md:text-xs;
+  transition-delay: 0s;
+  transition-property: opacity, transform, height;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.6, 1),
+    cubic-bezier(0.4, 0, 0.6, 1), step-end;
+  transition-duration: 0.24s;
+  @apply h-0 -translate-y-2 overflow-hidden opacity-0;
+  @apply relative z-40 flex items-center text-2xl font-semibold md:text-xs md:font-normal;
+}
+
+.open-menu .menu-item {
+  @apply h-10 translate-y-0 opacity-100;
+  transition-property: opacity, transform, height;
+  transition-delay: calc(0.2s + (var(--menu-number) * 20ms));
+  transition-timing-function: cubic-bezier(0.4, 0, 0.6, 1),
+    cubic-bezier(0.4, 0, 0.6, 1), step-start;
+  transition-duration: 0.24s;
 }
 
 .open-sub-menu .menu-item {
@@ -40,15 +58,23 @@
 }
 
 .group-container {
-  @apply container mx-auto flex flex-col gap-10 px-5 pt-20 md:flex-row md:px-0;
+  @apply container mx-auto flex flex-col gap-16 px-5 pt-20 md:flex-row md:px-0;
 }
 
 .items-group {
   @apply flex flex-col gap-3 last:pb-20 md:last:pb-0;
-  @apply text-sm first:text-xl;
+  @apply text-xs font-semibold first:text-2xl;
 }
 
 @screen md {
+  .menu-item {
+    @apply h-auto translate-y-0 opacity-100 transition-none;
+  }
+
+  .open-sub-menu .menu-item {
+    @apply h-auto !important;
+  }
+
   .submenu {
     @apply opacity-0;
     transition-property: opacity, height;
