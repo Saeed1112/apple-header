@@ -111,6 +111,9 @@ const TheHeader = function () {
         dir="rtl"
         className="container mx-auto flex w-full justify-between gap-2 px-5 text-xs sm:px-0 md:max-h-[2.8rem] md:items-center"
       >
+        <li className="back-btn" onClick={() => setState((state) => state - 1)}>
+          <button>Back</button>
+        </li>
         <li className="nav-items">Any</li>
         <li className="menu">
           {data.map((item, index) => (

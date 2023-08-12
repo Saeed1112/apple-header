@@ -95,7 +95,7 @@
 }
 
 .group-container {
-  @apply container  mx-auto flex flex-col gap-16 gap-y-16 px-5 pt-16 sm:flex-row sm:flex-wrap sm:gap-y-0 md:flex-row md:px-0 md:pt-20;
+  @apply container  mx-auto flex flex-col gap-16 gap-y-16 px-5 pt-16 sm:flex-row sm:flex-wrap sm:gap-y-0 sm:px-0 md:flex-row md:px-0 md:pt-20;
 }
 
 .items-group {
@@ -111,6 +111,18 @@
 }
 
 .open-sub-menu .items-group {
+  @apply translate-x-0 opacity-100;
+}
+
+.back-btn {
+  transition-property: opacity, transform, display;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.6, 1),
+    cubic-bezier(0.4, 0, 0.6, 1), step-start;
+  transition-duration: 0.24s;
+  @apply pointer-events-none relative start-5 z-[55] flex  h-11 translate-x-2 items-center justify-center opacity-0 md:hidden;
+}
+
+.open-sub-menu .back-btn {
   @apply translate-x-0 opacity-100;
 }
 
