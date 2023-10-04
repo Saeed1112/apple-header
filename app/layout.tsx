@@ -1,7 +1,7 @@
 import "./globals.css";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
-import FuckingHeader from "@/components/FuckingHeader";
+import FlyingHeader from "@/components/FlyingHeader";
 import kalameh from "@/font/kalameh";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -24,7 +24,7 @@ export default function RootLayout({
           backgroundImage: 'url("/background.webp")',
         }}
       >
-        <FuckingHeader />
+        <FlyingHeader />
         {children}
       </body>
     </html>

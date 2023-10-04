@@ -32,7 +32,7 @@ function getHeight(item: any) {
 
 const states = ["", "open-menu", "open-sub-menu"];
 
-const FuckingHeader = () => {
+const FlyingHeader = () => {
   const [state, setState] = useState(States.Close);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [height, setHeight] = useState(0);
@@ -85,7 +85,7 @@ const FuckingHeader = () => {
   );
 };
 
-export default FuckingHeader;
+export default FlyingHeader;
 const TheHeader = function () {
   const { setState, state, isMobile, prevHeight } = useHeader();
 
@@ -117,7 +117,7 @@ const TheHeader = function () {
         <li className="nav-items">Any</li>
         <li className="menu">
           {data.map((item, index) => (
-            <TheFuckingMenu
+            <Menu
               key={item.name}
               index={index}
               name={item.name}
@@ -138,13 +138,13 @@ const TheHeader = function () {
   );
 };
 
-type TheFuckingMenuProps = {
+type MenuProps = {
   child: any[];
   name: string;
   index: number;
 };
 
-function TheFuckingMenu({ name, child, index }: TheFuckingMenuProps) {
+function Menu({ name, child, index }: MenuProps) {
   const { setState, setCurrentIndex, setPrevHeight, isMobile, currentIndex } =
     useHeader();
   const height = getHeight(child);
@@ -193,7 +193,7 @@ function TheFuckingMenu({ name, child, index }: TheFuckingMenuProps) {
       >
         <div className="group-container" dir="rtl">
           {child.map((item: any, index) => (
-            <TheFuckingItemGroup
+            <ItemsGroup
               key={item.name}
               index={index}
               items={item.items}
@@ -206,7 +206,7 @@ function TheFuckingMenu({ name, child, index }: TheFuckingMenuProps) {
   );
 }
 
-function TheFuckingItemGroup({ items, name, index }: any) {
+function ItemsGroup({ items, name, index }: any) {
   return (
     <div
       className="items-group"
@@ -225,14 +225,14 @@ function TheFuckingItemGroup({ items, name, index }: any) {
       </h2>
       <ul className="flex flex-col gap-2">
         {items.map((item: any, index: number) => (
-          <TheFuckingItem item={item} key={item} index={index} />
+          <Item item={item} key={item} index={index} />
         ))}
       </ul>
     </div>
   );
 }
 
-function TheFuckingItem({ item, index }: any) {
+function Item({ item, index }: any) {
   return (
     <li
       className="single-item"
