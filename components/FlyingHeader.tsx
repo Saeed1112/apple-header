@@ -27,7 +27,7 @@ enum States {
 }
 
 function getHeight(item: any) {
-  return item.length > 0 ? (item[0]?.items?.length || 0) * 3 + 7 : 0;
+  return item.length > 0 ? (item[0]?.items?.length || 0) * 3 + 9 : 0;
 }
 
 const states = ["", "open-menu", "open-sub-menu"];
