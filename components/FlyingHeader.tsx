@@ -2,6 +2,7 @@
 import React, { createContext, useContext, useEffect, useState } from "react";
 import data from "@/components/header.json";
 import "./index.css";
+import { CloseIcon } from "next/dist/client/components/react-dev-overlay/internal/icons/CloseIcon";
 
 export const HeaderContext = createContext({});
 
@@ -114,7 +115,7 @@ const TheHeader = function () {
         <li className="back-btn" onClick={() => setState((state) => state - 1)}>
           <button>Back</button>
         </li>
-        <li className="nav-items">Any</li>
+        <li className="nav-items">Apple</li>
         <li className="menu">
           {data.map((item, index) => (
             <Menu
@@ -125,13 +126,13 @@ const TheHeader = function () {
             />
           ))}
         </li>
-        <li className="nav-items mr-auto md:mr-0">Cool</li>
-        <li className="nav-items">Thing</li>
+        <li className="nav-items mr-auto md:mr-0">Static Item</li>
+        <li className="nav-items">Static Item</li>
         <li
           className="relative z-[55] flex h-11 items-center justify-center md:hidden"
           onClick={toggleButtonClick}
         >
-          {state > 0 ? "Close" : "Open"}
+          {state > 0 ? <CloseIcon /> : <MenuIcon />}
         </li>
       </ul>
     </header>
@@ -240,5 +241,26 @@ function Item({ item, index }: any) {
     >
       <a href="#">{item}</a>
     </li>
+  );
+}
+
+function MenuIcon() {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      stroke-width="2"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      className="lucide lucide-menu"
+    >
+      <line x1="4" x2="20" y1="12" y2="12" />
+      <line x1="4" x2="20" y1="6" y2="6" />
+      <line x1="4" x2="20" y1="18" y2="18" />
+    </svg>
   );
 }

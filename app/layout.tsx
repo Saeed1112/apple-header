@@ -21,7 +21,7 @@ export default function RootLayout({
       <body
         className={`${kalameh.className} overflow-y-auto overflow-x-hidden bg-cover bg-center bg-no-repeat`}
         style={{
-          backgroundImage: 'url("/background.webp")',
+          backgroundImage: 'url("/apple.jpg")',
         }}
       >
         <FlyingHeader />
